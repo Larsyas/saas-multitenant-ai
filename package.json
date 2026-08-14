@@ -1,0 +1,22 @@
+{
+  "name": "saas-multitenant-ai",
+  "private": true,
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace=apps/api",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=apps/api && npm run build --workspace=apps/web",
+    "lint": "npm run lint --workspace=apps/api && npm run lint --workspace=apps/web",
+    "typecheck": "npm run typecheck --workspace=apps/api && npm run typecheck --workspace=apps/web",
+    "test": "npm run test --workspace=apps/api",
+    "seed": "npm run seed --workspace=apps/api"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.21.5": true,
+    "mongodb-memory-server@10.4.3": true
+  }
+}
